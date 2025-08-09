@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
+import LoginPage from './LoginPage';
+import Dashboard from './Dashboard';
+import AddAgent from './AddAgent';
+import UploadCSV from './UploadCSV';
+
+
+function Navbar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+  if (location.pathname === "/") return null;
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); 
+    navigate("/"); 
+  };
+
+  return (
+    <nav className="navbar">
+      <Link className="nav-button" to="/dashboard">Dashboard</Link>
+      <Link className="nav-button" to="/add-agent">Add Agent</Link>
+      <Link className="nav-button" to="/upload-csv">Upload CSV</Link>
+      <button className="logout-button" onClick={handleLogout}>
+        Logout
+      </button>
+    </nav>
+  );
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/add-agent" element={<AddAgent />} />
+        <Route path="/upload-csv" element={<UploadCSV />} />
+      </Routes>
+    </Router>
   );
 }
 

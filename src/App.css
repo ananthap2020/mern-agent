@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: blue;
 }
 
 .App-link {
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+}
+
+
+.add-agent-btn {
+  background-color: #28a745; 
+}
+.add-agent-btn:hover {
+  background-color: #218838;
+}
+
+
+.upload-csv-btn {
+  background-color: #007bff;
+}
+.upload-csv-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.logout-btn {
+  background-color: #dc3545; 
+}
+.logout-btn:hover {
+  background-color: #c82333;
 }

@@ -1,0 +1,57 @@
+.add-agent-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+.agents-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.agents-table th,
+.agents-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.agents-table th {
+  background-color: #f5f5f5;
+}
+
+.no-agents {
+  color: #777;
+}
+
+.add-agent-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-agent-form input {
+  flex: 1 1 180px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-agent-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-agent-form button:hover {
+  background-color: #45a049;
+}
